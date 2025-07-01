@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OLA STATE UNIVERSITY</title>
+        <style>
+            /* Universal selector or Global styling */
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-decoration: none;
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+
+            body {
+                background-color: #2c3e50;
+                color: #fff;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem;
+                background-color: #000;
+            }
+
+            .navbar {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .navbar a {
+                color: #fff;
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            img {
+                width: 50px;
+            }
+
+            /*  Customizing The LINES in button Toggler */
+            .line {
+                width: 100%;
+                height: 3px;
+                background-color: #000;
+                /* The spacing between lines */
+                margin-top: 3px;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* At DESKTOP Screen Toggle button will be HIDDEN */
+            .toggleBtn {
+                display: none;
+            }
+
+            footer {
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-color: #101010;
+            }
+
+            @media (max-width: 66rem) {
+                .toggleBtn {
+                    display: block;
+                    z-index: 1000;
+                    border-radius: 0.5rem;
+                    /* The spacing around the lines */
+                    width: 2.3rem;
+                    height: 2.2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 8px;
+                    background-color: #dddd;
+                    cursor: pointer;
+                    margin: auto 0;
+                    position: absolute;
+                    top: 2%;
+                    right: 3%;
+                    transition: 0.3s;
+                    /* border: none;
+                    outline: none; */
+                }
+
+                /* Customizing my list items  in media query*/
+                .navbar {
+                    background-color: purple;
+                    opacity: 0.9;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    font-size: 30px;
+                    width: 60%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    border-radius: 0 0 0 50%;
+                    padding-top: 20%;
+                    transition: 0.3s;
+                }
+
+                .navbar li:hover {
+                    border-bottom: 2px solid red;
+                }
+
+                /* animating the line bar to change to X-iCON from toggle-icon */
+                .toggleBtn.show .line:nth-child(1) {
+                    transform: translateY(3px) rotate(45deg);
+                }
+                .toggleBtn.show .line:nth-child(2) {
+                    opacity: 0;
+                }
+                .toggleBtn.show .line:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+                /* Enabling the navbar */
+                .show {
+                    right: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <!-- website logo -->
+            <div class="logo">
+                <img
+                    src="../PHP_Project/UploadImageOfStudent/logo.png"
+                    alt="logo"
+                />
+                <h2>OLA STATE UNIVERSITY</h2>
+            </div>
+
+            <!-- Navigation list-->
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Admin</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+
+            <!-- Toggle Menu for Mobile friendly device -->
+            <button class="toggleBtn" id="toggleIcon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+        </nav>
+
+        <main></main>
+
+        <footer>
+            <!-- website logo -->
+            <div class="logo">
+                <img
+                    src="../PHP_Project/UploadImageOfStudent/logo.png"
+                    alt="logo"
+                />
+                <h2>OLA STATE UNIVERSITY</h2>
+            </div>
+            <!-- copyright -->
+            <div style="text-align: center">
+                &copy; Copyright 2022 By Bolaji Bakare
+            </div>
+        </footer>
+
+        <script>
+            // Collecting DOM for the Mobile friendly interface
+            const TogglerBtn = document.getElementById("toggleIcon");
+            const Navbar = document.getElementById("navbar");
+
+            //FOR The Toggle Button when clicked on
+            TogglerBtn.addEventListener("click", () => {
+                Navbar.classList.toggle("show");
+                TogglerBtn.classList.toggle("show");
+                TogglerBtn.style.right = "3%";
+            });
+
+            //when a link is clicked, i want the toggle menu to disappear
+            document.querySelectorAll("li").forEach((n) =>
+                n.addEventListener("click", () => {
+                    Navbar.classList.remove("show");
+                    TogglerBtn.classList.remove("show");
+                })
+            );
+        </script>
+    </body>
+</html>
