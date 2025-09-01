@@ -40,9 +40,9 @@
     </nav>
 
     
-    <main>
-      <h1>Dashboard</h1>
-    </main>
+    <header>
+      <h1>Ola State university Dashboard</h1>
+    </header>
 
     <footer>
       <!-- website logo -->
