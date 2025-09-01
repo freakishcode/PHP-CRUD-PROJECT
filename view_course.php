@@ -1,6 +1,6 @@
 <?php
 // Include config for database & SELECT
-include "../PHP_Project/select.php";
+include "./select.php";
 
 ?>
 

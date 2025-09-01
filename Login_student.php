@@ -9,7 +9,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 }
 
 // Include config file
-require_once "../PHP_Project/DATABASE_Configuration/Database_for_student.php";
+require_once "./DATABASE_Configuration/Database_for_student.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";

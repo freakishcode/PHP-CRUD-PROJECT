@@ -1,6 +1,6 @@
 <?php
 //adding database configuration file
-include '../PHP_Project/DATABASE_Configuration/Database_for_student.php';
+include './DATABASE_Configuration/Database_for_student.php';
 
 // Define variables and initialize with empty values
 $id = $ProfilePicture = $username = $email = $last_name = $first_name = $Faculty_And_Department =  $JAMB_Reg_No = $phoneNumber = $DateOfBirth = $state_of_origin = $LGA = $gender = "";

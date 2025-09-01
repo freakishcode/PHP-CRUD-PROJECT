@@ -1,6 +1,6 @@
 <?php
 //adding database configuration file
-include '../PHP_Project/DATABASE_Configuration/Database_for_student.php';
+include './DATABASE_Configuration/Database_for_student.php';
 
 $get_data = "SELECT * FROM students LIMIT 1";
 // using LIMIT 1 to limit the the no of row to select to 1 only & not all student that registered

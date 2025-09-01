@@ -1,7 +1,7 @@
 <?php
 session_start();
 //connecting to database configuration
-include '../PHP_Project/DATABASE_Configuration/Database_for_student.php';
+include './DATABASE_Configuration/Database_for_student.php';
 
 if (isset($_POST['save'])) {
     //validating checkbox

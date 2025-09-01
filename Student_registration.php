@@ -1,6 +1,6 @@
 <?php
 
-require_once '../PHP_Project/DATABASE_Configuration/Database_for_student.php';
+require_once './DATABASE_Configuration/Database_for_student.php';
 
 // Define variables and initialize with empty values
 $ProfilePicture = $username = $email = $last_name = $first_name = $Faculty_And_Department =  $JAMB_Reg_No = $phoneNumber = $DateOfBirth = $state_of_origin = $LGA = $gender = $password = $confirm_password = "";
@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] ==  "POST") {
 
     //validate L.G.A
     if (empty($LGA)) {
-        $ErrorMessage = "Input required";
+        $ErrorMessage = "LGA required";
     } else {
         $LGA = trim($_POST['LGA']);
     }
